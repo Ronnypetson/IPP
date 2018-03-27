@@ -8,7 +8,7 @@ void* p_mc_pi(void* thread);
 
 int size; /* Número de threads */
 unsigned int n; /* Número de iterações a serem distribuídas entre as threads */
-long long unsigned int in; /* Contador de pontos interiores. Atenção para condição de corrida */
+long long unsigned int in = 0; /* Contador de pontos interiores. Atenção para condição de corrida */
 pthread_mutex_t mut;
 
 int main(void) {
@@ -41,6 +41,7 @@ int main(void) {
 void* p_mc_pi(void* thread){
 	unsigned int id = (unsigned int)thread;
 	unsigned int my_n = n/size + (id == size-1)*(n%size); /* A última thread fica com o resto das iterações */
+	long long unsigned int my_in = 0;
 	long long i;
 	double x,y,d;
 	for(i = 0; i < my_n; i++){
@@ -48,12 +49,14 @@ void* p_mc_pi(void* thread){
 		y = ((rand_r(&id) % 1000000)/500000.0)-1;
 		d = ((x*x) + (y*y));
 		if (d <= 1.0){
-			/* Protecc região crítica */
-			pthread_mutex_lock(&mut);
-			in+=1;
-			pthread_mutex_unlock(&mut);
+			my_in++;
 		}
 	}
+
+	/* Protecc região crítica */
+	pthread_mutex_lock(&mut);
+	in += my_in;
+	pthread_mutex_unlock(&mut);
 
 	return NULL;
 }
