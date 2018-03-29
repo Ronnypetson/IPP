@@ -1,3 +1,13 @@
+/*
+UNICAMP - Universidade Estadual de Campinas
+IC - Instituto de Computação
+Introdução à Programação Paralela (MC970/MO644)
+Professor: Guido Araújo
+
+Nome: Ronnypetson Souza da Silva
+RA: 211848
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
@@ -8,7 +18,7 @@ void* p_mc_pi(void* thread);
 
 int size; /* Número de threads */
 unsigned int n; /* Número de iterações a serem distribuídas entre as threads */
-long long unsigned int in = 0; /* Contador de pontos interiores. Atenção para condição de corrida */
+long long unsigned int in = 0; /* Contador global de pontos interiores. Atenção para condição de corrida */
 pthread_mutex_t mut;
 
 int main(void) {
@@ -16,11 +26,13 @@ int main(void) {
 	long unsigned int duracao;
 	struct timeval start, end;
 
+	/* Leitura da entrada */
 	scanf("%d %u",&size, &n);
 	srand(time(NULL));
+	/* Handlers das threads e mutex */
 	pthread_t* thread_handlers = (pthread_t*)malloc(size*sizeof(pthread_t));
 	pthread_mutex_init(&mut,NULL);
-
+	/* Execução das threads e medição do tempo de execução */
 	gettimeofday(&start, NULL);
 	for(i = 0; i < size; i++)
 		pthread_create(&thread_handlers[i],NULL,p_mc_pi,(void*)i);
@@ -30,7 +42,7 @@ int main(void) {
 
 	pthread_mutex_destroy(&mut);
 	duracao = ((end.tv_sec * 1000000 + end.tv_usec) - (start.tv_sec * 1000000 + start.tv_usec));
-
+	/* Usa o resultado que foi agregado na variável global */
 	double pi = 4*in/((double)n);
 	printf("%lf\n%lu\n",pi,duracao);
 
@@ -44,6 +56,7 @@ void* p_mc_pi(void* thread){
 	long long unsigned int my_in = 0;
 	long long i;
 	double x,y,d;
+	/* Contagem do número de pontos dentro do círculo de raio 1 */
 	for(i = 0; i < my_n; i++){
 		x = ((rand_r(&id) % 1000000)/500000.0)-1;
 		y = ((rand_r(&id) % 1000000)/500000.0)-1;
@@ -53,7 +66,7 @@ void* p_mc_pi(void* thread){
 		}
 	}
 
-	/* Protecc região crítica */
+	/* Agregação do resultado local ao resultado global */
 	pthread_mutex_lock(&mut);
 	in += my_in;
 	pthread_mutex_unlock(&mut);
@@ -61,6 +74,8 @@ void* p_mc_pi(void* thread){
 	return NULL;
 }
 
+/*
+Método sequencial para referência
 long long unsigned int monte_carlo_pi(unsigned int n) {
 	long long unsigned int in = 0, i;
 	double x, y, d;
@@ -74,4 +89,5 @@ long long unsigned int monte_carlo_pi(unsigned int n) {
 
 	return in;
 }
+*/
 
