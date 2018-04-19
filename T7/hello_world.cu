@@ -4,7 +4,7 @@
 using namespace std;
 
 __global__ void add(int *a, int *b, int *c){
-    c[blockIdx.x] = a[blockIdx.x] + b[blockIdx.x];
+    c[threadIdx.x] = a[threadIdx.x] + b[threadIdx.x];
 }
 
 void random_ints(int* a){
@@ -26,13 +26,10 @@ int main(void){
     b = (int *)malloc(size); random_ints(b);
     c = (int *)malloc(size);
 
-    //for(int i = 0; i < N; i++)
-    //    printf("%d %d\n",a[i],b[i]);
-
     cudaMemcpy(d_a, a, size, cudaMemcpyHostToDevice);
     cudaMemcpy(d_b, b, size, cudaMemcpyHostToDevice);
 
-    add<<<N,1>>>(d_a, d_b, d_c);
+    add<<<1,N>>>(d_a, d_b, d_c);
 
     cudaMemcpy(c, d_c, size, cudaMemcpyDeviceToHost);
 
