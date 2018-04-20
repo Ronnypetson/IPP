@@ -1,10 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#define THREADS_POR_BLOCO 1024
+#define DIM_BLOCO 32
+#define DIM_GRID 32
 
-__global__ void add(int *a, int *b, int *c){
-    int index = threadIdx.x + blockIdx.x*blockDim.x;
-    c[index] = a[index] + b[index];
+__global__ void add(int *a, int *b, int *c, int N){
+    //int i = threadIdx.y + blockIdx.y*blockDim.y;
+    //int j = threadIdx.x + blockIdx.x*blockDim.x;
+    int index = 
+        DIM_BLOCO*DIM_BLOCO*(DIM_GRID*blockIdx.x+blockIdx.y)+blockDim.y*threadIdx.x+threadIdx.y;
+    if(index < N)
+        c[index] = a[index] + b[index];
 }
 
 int main()
@@ -48,15 +55,12 @@ int main()
     cudaMemcpy(d_C, C, size, cudaMemcpyHostToDevice);
 
     //Computacao que deverá ser movida para a GPU
-    //Lembrar que é necessário usar mapeamento 2D (visto em aula) 
-    //for(i=0; i < linhas; i++){
-    //    for(j = 0; j < colunas; j++){
-    //        C[i*colunas+j] = A[i*colunas+j] + B[i*colunas+j];
-    //    }
-    //}
     // Número de blocos = Número de linhas
     // threads por bloco = número de colunas
-    add<<<linhas,colunas>>>(d_A,d_B,d_C);
+    dim3 dimGrid(DIM_GRID,DIM_GRID);
+    dim3 dimBlock(DIM_BLOCO,DIM_BLOCO);
+    add<<<dimGrid,dimBlock>>>(d_A,d_B,d_C,N);
+    //add<<<(N+THREADS_POR_BLOCO-1)/THREADS_POR_BLOCO,THREADS_POR_BLOCO>>>(d_A,d_B,d_C,N);
     cudaMemcpy(C,d_C,size,cudaMemcpyDeviceToHost);
 
     long long int somador=0;
@@ -74,4 +78,3 @@ int main()
     free(A); free(B); free(C);
     cudaFree(d_A); cudaFree(d_B); cudaFree(d_C);
 }
-
