@@ -95,7 +95,14 @@ static PPMImage *readPPM(const char *filename) {
 
 __global__ void count_hist(PPMImage *image, float *h, float n){
 	// compute i, j, k, l, x
-	if (image->data[i].red == j
+	unsigned int index = DIM_BLOCO*DIM_BLOCO*(DIM_GRID*blockIdx.x+blockIdx.y+blockDim.y*threadIdx.x+threadIdx.y;
+	unsigned int x = index/64;
+	unsigned int i = index%n;
+	int j = x/16;
+	int k = (x-16*j)/4;
+	int l = (x-16*j-4*k);
+	if (index < 64*image->y*image->x
+	 && image->data[i].red == j
 	 && image->data[i].green == k
 	 && image->data[i].blue == l) {
 		atomicAdd(h[x],1/n);
