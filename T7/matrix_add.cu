@@ -3,7 +3,7 @@
 #include <math.h>
 #define THREADS_POR_BLOCO 1024
 #define DIM_BLOCO 32
-#define DIM_GRID 32
+#define DIM_GRID 1024
 
 __global__ void add(int *a, int *b, int *c, int N){
     //int i = threadIdx.y + blockIdx.y*blockDim.y;
