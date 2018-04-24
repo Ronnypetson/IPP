@@ -4,6 +4,8 @@
 #include <math.h>
 #define COMMENT "Histogram_GPU"
 #define RGB_COMPONENT_COLOR 255
+#define DIM_BLOCO 32
+#define DIM_GRID 1960 // 1960*1960*1024
 
 typedef struct {
 	unsigned char red, green, blue;
@@ -53,8 +55,7 @@ static PPMImage *readPPM(const char *filename) {
 
 	c = getc(fp);
 	while (c == '#') {
-		while (getc(fp) != '\n')
-			;
+		while (getc(fp) != '\n');
 		c = getc(fp);
 	}
 
@@ -75,8 +76,7 @@ static PPMImage *readPPM(const char *filename) {
 		exit(1);
 	}
 
-	while (fgetc(fp) != '\n')
-		;
+	while (fgetc(fp) != '\n');
 	img->data = (PPMPixel*) malloc(img->x * img->y * sizeof(PPMPixel));
 
 	if (!img) {
@@ -93,33 +93,48 @@ static PPMImage *readPPM(const char *filename) {
 	return img;
 }
 
+__global__ void count_hist(PPMImage *image, float *h, float n){
+	// compute i, j, k, l, x
+	if (image->data[i].red == j
+	 && image->data[i].green == k
+	 && image->data[i].blue == l) {
+		atomicAdd(h[x],1/n);
+	}
+}
 
 void Histogram(PPMImage *image, float *h) {
-
-	int i, j,  k, l, x, count;
+	int i, j, k, l, x, count;
 	int rows, cols;
-
 	float n = image->y * image->x;
-	printf("%d\n",n);
-
 	cols = image->x;
 	rows = image->y;
-
 	//printf("%d, %d\n", rows, cols );
-
 	for (i = 0; i < n; i++) {
 		image->data[i].red = floor((image->data[i].red * 4) / 256);
 		image->data[i].blue = floor((image->data[i].blue * 4) / 256);
 		image->data[i].green = floor((image->data[i].green * 4) / 256);
 	}
-
-	count = 0;
+	unsigned int size = sizeof(PPMPixel)*image->y*image->x + 2*sizeof(int);
+	PPMImage *d_image;
+	float *d_h;
+	cudaMalloc((void **)&d_image,size);
+	cudaMalloc((void **)&d_h,64*sizeof(float));
+	cudaMemcpy(d_image,image,size,cudaMemcpyHostToDevice);
+	cudaMemcpy(d_h,h,64*sizeof(float),cudaMemcpyHostToDevice);
+	dim3 dimGrid(DIM_GRID,DIM_GRID);
+	dim3 dimBlock(DIM_BLOCO,DIM_BLOCO);
+	count_hist<<<dimGrid,dimBlock>>>(d_image,d_h,n);
+	cudaMemcpy(h,d_h,64*sizeof(float),cudaMemcpyDeviceToHost);
+	cudaFree(d_image); cudaFree(d_h);
+	/*count = 0;
 	x = 0;
 	for (j = 0; j <= 3; j++) {
 		for (k = 0; k <= 3; k++) {
 			for (l = 0; l <= 3; l++) {
 				for (i = 0; i < n; i++) {
-					if (image->data[i].red == j && image->data[i].green == k && image->data[i].blue == l) {
+					if (image->data[i].red == j
+					 && image->data[i].green == k
+					 && image->data[i].blue == l) {
 						count++;
 					}
 				}
@@ -128,11 +143,10 @@ void Histogram(PPMImage *image, float *h) {
 				x++;
 			}				
 		}
-	}
+	}*/
 }
 
 int main(int argc, char *argv[]) {
-
 	if( argc != 2 ) {
 		printf("Too many or no one arguments supplied.\n");
 	}
@@ -160,3 +174,4 @@ int main(int argc, char *argv[]) {
 	//fprintf(stdout, "\n%0.6lfs\n", t_end - t_start);  
 	free(h);
 }
+
