@@ -156,7 +156,7 @@ int main(int argc, char *argv[]) {
 	for (i = 0; i < 64; i++){
 		printf("%0.3f ", h[i]);
 	}
-	printf("\n");
-	//fprintf(stdout, "\n%0.6lfs\n", t_end - t_start);  
+	//printf("\n");
+	fprintf(stdout, "\n%0.6lfs\n", t_end - t_start);  
 	free(h);
 }

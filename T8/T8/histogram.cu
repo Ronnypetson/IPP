@@ -93,65 +93,47 @@ static PPMImage *readPPM(const char *filename) {
 	return img;
 }
 
-__global__ void count_hist(PPMImage *image, float *h, float n){
-	// compute i, j, k, l, x
-	unsigned int n_ = image->y*image->x;
+__global__ void count_hist(PPMPixel *data, float *h, unsigned int n_){
 	unsigned int index = DIM_BLOCO*DIM_BLOCO*(DIM_GRID*blockIdx.x+blockIdx.y)+blockDim.y*threadIdx.x+threadIdx.y;
-	unsigned int x = index/64;
+	unsigned int x = index/n_;
 	unsigned int i = index%n_;
-	int j = x/16;
-	int k = (x-16*j)/4;
-	int l = (x-16*j-4*k);
+	unsigned int j = x/16;
+	unsigned int k = (x-16*j)/4;
+	unsigned int l = (x-16*j-4*k);
 	if (index < 64*n_
-	 && image->data[i].red == j
-	 && image->data[i].green == k
-	 && image->data[i].blue == l) {
-		atomicAdd(&h[x],1/n);
+		 && data[i].red == j
+		 && data[i].green == k
+		 && data[i].blue == l) {
+		atomicAdd(&h[x],1.0);
 	}
 }
 
 void Histogram(PPMImage *image, float *h) {
 	int i, j, k, l, x, count;
 	int rows, cols;
-	float n = image->y * image->x;
+	unsigned int n = image->y * image->x;
 	cols = image->x;
 	rows = image->y;
-	//printf("%d, %d\n", rows, cols );
 	for (i = 0; i < n; i++) {
 		image->data[i].red = floor((image->data[i].red * 4) / 256);
 		image->data[i].blue = floor((image->data[i].blue * 4) / 256);
 		image->data[i].green = floor((image->data[i].green * 4) / 256);
 	}
-	unsigned int size = sizeof(PPMPixel)*image->y*image->x + 2*sizeof(int);
-	PPMImage *d_image;
+	// Parte movida para a GPU
+	unsigned int size = 3*sizeof(unsigned char)*n;
+	PPMPixel *d_data;
 	float *d_h;
-	cudaMalloc((void **)&d_image,size);
+	cudaMalloc((void **)&d_data,size);
 	cudaMalloc((void **)&d_h,64*sizeof(float));
-	cudaMemcpy(d_image,image,size,cudaMemcpyHostToDevice);
+	cudaMemcpy(d_data,image->data,size,cudaMemcpyHostToDevice);
 	cudaMemcpy(d_h,h,64*sizeof(float),cudaMemcpyHostToDevice);
 	dim3 dimGrid(DIM_GRID,DIM_GRID);
 	dim3 dimBlock(DIM_BLOCO,DIM_BLOCO);
-	count_hist<<<dimGrid,dimBlock>>>(d_image,d_h,n);
+	count_hist<<<dimGrid,dimBlock>>>(d_data,d_h,n);
 	cudaMemcpy(h,d_h,64*sizeof(float),cudaMemcpyDeviceToHost);
-	cudaFree(d_image); cudaFree(d_h);
-	/*count = 0;
-	x = 0;
-	for (j = 0; j <= 3; j++) {
-		for (k = 0; k <= 3; k++) {
-			for (l = 0; l <= 3; l++) {
-				for (i = 0; i < n; i++) {
-					if (image->data[i].red == j
-					 && image->data[i].green == k
-					 && image->data[i].blue == l) {
-						count++;
-					}
-				}
-				h[x] = count / n; //Histograma normalizado
-				count = 0;
-				x++;
-			}				
-		}
-	}*/
+	cudaFree(d_data); cudaFree(d_h);
+	for(i = 0; i < 64; i++)
+		h[i] /= n;
 }
 
 int main(int argc, char *argv[]) {
@@ -178,8 +160,7 @@ int main(int argc, char *argv[]) {
 	for (i = 0; i < 64; i++){
 		printf("%0.3f ", h[i]);
 	}
-	printf("\n");
-	//fprintf(stdout, "\n%0.6lfs\n", t_end - t_start);  
+	fprintf(stdout, "\n%0.6lfs\n", t_end - t_start);  
 	free(h);
 }
 
