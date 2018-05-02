@@ -37,12 +37,12 @@ int main ()
     t_start = rtclock();
 
 	// A busca é dividida dinamicamente para contornar os casos em que a senha fica no limite da busca de uma das threads
-	// cmd e fp são privadas para evitar condição de corrida
+	// cmd, fp e ret são privadas para evitar condição de corrida
 	// found é compartilhada para comunicar o estado da busca à todas as threads
-	# pragma omp parallel for num_threads(nt) private(cmd,fp) shared(found,t_end) schedule(dynamic)
+	# pragma omp parallel for num_threads(nt) private(cmd,fp,ret) shared(found,t_end) schedule(dynamic)
     for(i=0; i < 500000; i++){
 		// Senha encontrada implica na finalização da busca por todas as threads
-		if(found){
+		if(found == 1){
 			exit(1);
 		}
 
@@ -67,7 +67,7 @@ int main ()
   	t_end = rtclock();
 
 	// para o caso de nenhuma thread ter encontrado a senha
-	if(!found){
+	if(found == 0){
   		fprintf(stdout, "%0.6lf\n", t_end - t_start);
 	}
 }
