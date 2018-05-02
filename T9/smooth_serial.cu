@@ -188,7 +188,7 @@ int main(int argc, char *argv[]) {
     //
     cudaMemcpy(image_output->data, d_data, data_size, cudaMemcpyDeviceToHost);
     //
-    cudaFree(d_data, d_data_copy);
+    cudaFree(d_data); cudaFree(d_data_copy);
     /* End of CUDA stuff */
     t_end = rtclock();
 
