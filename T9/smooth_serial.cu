@@ -108,26 +108,49 @@ void writePPM(PPMImage *img) {
 
 /* CUDA kernel */
 __global__ void smoothing_gpu(PPMPixel *data, PPMPixel *data_copy, int dim_x, int dim_y){
-    unsigned int index;
-    int i, j, x, y;
+    unsigned int index, index_in_block;
+    int pos0_x, pos0_y; // A posição na imagem do primeiro pixel do bloco
+    int img_x, img_y; // A posição do pixel da thread na imagem
+    //
+    int x, y, lx, ly;
     int total_red, total_blue, total_green;
+    //
+    pos0_x = blockIdx.x*(blockDim.x*blockDim.y);
+    pos0_y = blockIdx.y*(blockDim.x*blockDim.y);
+    img_x = pos0_x+threadIdx.x;
+    img_y = pos0_y+threadIdx.y;
     index = blockDim.x*blockDim.y*(gridDim.x*blockIdx.y+blockIdx.x)+blockDim.x*threadIdx.y+threadIdx.x;
+    index_in_block = blockDim.x*threadIdx.y+threadIdx.x;
     if(index < dim_x*dim_y){
-        i = index/dim_x;
-        j = index%dim_x;
+        __shared__ PPMPixel s_data[DIM_BLOCO*DIM_BLOCO];
+        __shared__ PPMPixel s_data_copy[DIM_BLOCO*DIM_BLOCO];
+        s_data_copy[index_in_block] = data_copy[img_y*dim_x+img_x];
+        __syncthreads();
         total_red = total_blue = total_green = 0;
-        for (y = i - ((MASK_WIDTH-1)/2); y <= (i + ((MASK_WIDTH-1)/2)); y++) {
-            for (x = j - ((MASK_WIDTH-1)/2); x <= (j + ((MASK_WIDTH-1)/2)); x++) {
+        for (y = img_y - ((MASK_WIDTH-1)/2); y <= (img_y + ((MASK_WIDTH-1)/2)); y++) {
+            for (x = img_x - ((MASK_WIDTH-1)/2); x <= (img_x + ((MASK_WIDTH-1)/2)); x++) {
                 if (x >= 0 && y >= 0 && y < dim_y && x < dim_x) {
-                    total_red += data_copy[(y * dim_x) + x].red;
-                    total_blue += data_copy[(y * dim_x) + x].blue;
-                    total_green += data_copy[(y * dim_x) + x].green;
+                    if(x >= (blockIdx.x+1)*(blockDim.x*blockDim.y)
+                    || y >= (blockIdx.y+1)*(blockDim.x*blockDim.y)
+                    || x < (blockIdx.x)*(blockDim.x*blockDim.y)
+                    || y < (blockIdx.y)*(blockDim.x*blockDim.y)){ // Pixel fora da memória compartilhada -> pegar da global
+                        total_red += data_copy[(y*dim_x)+x].red;
+                        total_blue += data_copy[(y*dim_x)+x].blue;
+                        total_green += data_copy[(y*dim_x)+x].green;
+                    } else { // Pegar na local
+                        lx = x - img_x + threadIdx.x;
+                        ly = y - img_y + threadIdx.y;
+                        total_red += s_data_copy[ly*blockDim.x+lx].red;
+                        total_blue += s_data_copy[ly*blockDim.x+lx].blue;
+                        total_green += s_data_copy[ly*blockDim.x+lx].green;
+                    }
                 }
             }
         }
-        data[(i * dim_x) + j].red = total_red / (MASK_WIDTH*MASK_WIDTH);
-        data[(i * dim_x) + j].blue = total_blue / (MASK_WIDTH*MASK_WIDTH);
-        data[(i * dim_x) + j].green = total_green / (MASK_WIDTH*MASK_WIDTH);
+        s_data[index_in_block].red = total_red / (MASK_WIDTH*MASK_WIDTH);
+        s_data[index_in_block].blue = total_blue / (MASK_WIDTH*MASK_WIDTH);
+        s_data[index_in_block].green = total_green / (MASK_WIDTH*MASK_WIDTH);
+        data[img_y*dim_x+img_x] = s_data[index_in_block];
     }
 }
 /* End of CUDA kernel */
@@ -171,7 +194,8 @@ int main(int argc, char *argv[]) {
     t_start = rtclock();
     /* CUDA stuff */
     unsigned int n = image->x*image->y;
-    unsigned int dim_grid = (int)(sqrt(n*1.0/(DIM_BLOCO*DIM_BLOCO)))+1;
+    unsigned int dim_grid_x = (image->x+DIM_BLOCO-1)/DIM_BLOCO;
+    unsigned int dim_grid_y = (image->y+DIM_BLOCO-1)/DIM_BLOCO;
     unsigned int data_size = 3*(sizeof(unsigned char))*n;
 
     PPMPixel *d_data, *d_data_copy;
@@ -182,7 +206,7 @@ int main(int argc, char *argv[]) {
     cudaMemcpy(d_data_copy, image->data, data_size, cudaMemcpyHostToDevice);
     //
     dim3 dimBlock(DIM_BLOCO,DIM_BLOCO);
-    dim3 dimGrid(dim_grid,dim_grid);
+    dim3 dimGrid(dim_grid_x,dim_grid_y);
     //
     smoothing_gpu<<<dimGrid,dimBlock>>>(d_data, d_data_copy, image->x, image->y);
     //
