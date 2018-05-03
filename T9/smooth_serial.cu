@@ -115,14 +115,15 @@ __global__ void smoothing_gpu(PPMPixel *data, PPMPixel *data_copy, int dim_x, in
     int x, y, lx, ly;
     int total_red, total_blue, total_green;
     //
-    pos0_x = blockIdx.x*(blockDim.x*blockDim.y);
-    pos0_y = blockIdx.y*(blockDim.x*blockDim.y);
+    pos0_x = blockIdx.x*blockDim.x;
+    pos0_y = blockIdx.y*blockDim.y;
     img_x = pos0_x+threadIdx.x;
     img_y = pos0_y+threadIdx.y;
     index = blockDim.x*blockDim.y*(gridDim.x*blockIdx.y+blockIdx.x)+blockDim.x*threadIdx.y+threadIdx.x;
     index_in_block = blockDim.x*threadIdx.y+threadIdx.x;
-    if(index < dim_x*dim_y){
-        __shared__ PPMPixel s_data[DIM_BLOCO*DIM_BLOCO];
+    if(blockDim.x*blockIdx.x+threadIdx.x < dim_x
+     && blockDim.y*blockIdx.y+threadIdx.y < dim_y){
+        PPMPixel s_data;
         __shared__ PPMPixel s_data_copy[DIM_BLOCO*DIM_BLOCO];
         s_data_copy[index_in_block] = data_copy[img_y*dim_x+img_x];
         __syncthreads();
@@ -130,10 +131,11 @@ __global__ void smoothing_gpu(PPMPixel *data, PPMPixel *data_copy, int dim_x, in
         for (y = img_y - ((MASK_WIDTH-1)/2); y <= (img_y + ((MASK_WIDTH-1)/2)); y++) {
             for (x = img_x - ((MASK_WIDTH-1)/2); x <= (img_x + ((MASK_WIDTH-1)/2)); x++) {
                 if (x >= 0 && y >= 0 && y < dim_y && x < dim_x) {
-                    if(x >= (blockIdx.x+1)*(blockDim.x*blockDim.y)
-                    || y >= (blockIdx.y+1)*(blockDim.x*blockDim.y)
-                    || x < (blockIdx.x)*(blockDim.x*blockDim.y)
-                    || y < (blockIdx.y)*(blockDim.x*blockDim.y)){ // Pixel fora da memória compartilhada -> pegar da global
+                    if(x >= (blockIdx.x+1)*blockDim.x
+                    || y >= (blockIdx.y+1)*blockDim.y
+                    || x < blockIdx.x*blockDim.x
+                    || y < blockIdx.y*blockDim.y){
+                        // Pixel fora da memória compartilhada -> pegar da global (filtro entre blocos)
                         total_red += data_copy[(y*dim_x)+x].red;
                         total_blue += data_copy[(y*dim_x)+x].blue;
                         total_green += data_copy[(y*dim_x)+x].green;
@@ -147,10 +149,10 @@ __global__ void smoothing_gpu(PPMPixel *data, PPMPixel *data_copy, int dim_x, in
                 }
             }
         }
-        s_data[index_in_block].red = total_red / (MASK_WIDTH*MASK_WIDTH);
-        s_data[index_in_block].blue = total_blue / (MASK_WIDTH*MASK_WIDTH);
-        s_data[index_in_block].green = total_green / (MASK_WIDTH*MASK_WIDTH);
-        data[img_y*dim_x+img_x] = s_data[index_in_block];
+        s_data.red = total_red / (MASK_WIDTH*MASK_WIDTH);
+        s_data.blue = total_blue / (MASK_WIDTH*MASK_WIDTH);
+        s_data.green = total_green / (MASK_WIDTH*MASK_WIDTH);
+        data[img_y*dim_x+img_x] = s_data;
     }
 }
 /* End of CUDA kernel */
@@ -216,7 +218,6 @@ int main(int argc, char *argv[]) {
     /* End of CUDA stuff */
     t_end = rtclock();
 
-    //Smoothing_CPU_Serial(image_output, image);
     writePPM(image_output);
     //fprintf(stdout, "\n%0.6lfs\n", t_end - t_start);  
     free(image);
