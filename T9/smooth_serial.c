@@ -148,9 +148,9 @@ int main(int argc, char *argv[]) {
     Smoothing_CPU_Serial(image_output, image);
     t_end = rtclock();
 
-    writePPM(image_output);
+    //writePPM(image_output);
 
-    //fprintf(stdout, "\n%0.6lfs\n", t_end - t_start);  
+    fprintf(stdout, "\n%0.6lfs\n", t_end - t_start);
     free(image);
     free(image_output);
 }

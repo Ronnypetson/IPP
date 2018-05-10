@@ -94,6 +94,11 @@ static PPMImage *readPPM(const char *filename) {
 }
 
 __global__ void count_hist(PPMPixel *data, float *h, unsigned int n_){
+	// n_ é ó total de pixels
+	// Uma thread para cada combinação (pixel,rgb), onde pixel = 0, 1, ..., n_-1 e rgb = 0, 1, ..., 63
+	// Calcular índice da thread e os respectivos índices x, i, j, k, l
+	// DIM_BLOCO = blockDim.x = blockDim.y
+	// DIM_GRID = gridDim.x = gridDim.y
 	unsigned int index = DIM_BLOCO*DIM_BLOCO*(DIM_GRID*blockIdx.x+blockIdx.y)+blockDim.y*threadIdx.x+threadIdx.y;
 	unsigned int x = index/n_;
 	unsigned int i = index%n_;
@@ -104,7 +109,7 @@ __global__ void count_hist(PPMPixel *data, float *h, unsigned int n_){
 		 && data[i].red == j
 		 && data[i].green == k
 		 && data[i].blue == l) {
-		atomicAdd(&h[x],1.0);
+		atomicAdd(&h[x],1.0); // o histograma é normalizado depois para evitar erro de precisão
 	}
 }
 
@@ -112,6 +117,7 @@ void Histogram(PPMImage *image, float *h) {
 	int i, j, k, l, x, count;
 	int rows, cols;
 	unsigned int n = image->y * image->x;
+	double t_start, t_end, t_cbuffer, t_offload_enviar, t_kernel, t_offload_receber;
 	cols = image->x;
 	rows = image->y;
 	for (i = 0; i < n; i++) {
@@ -123,17 +129,38 @@ void Histogram(PPMImage *image, float *h) {
 	unsigned int size = 3*sizeof(unsigned char)*n;
 	PPMPixel *d_data;
 	float *d_h;
+
+	t_start = rtclock();
 	cudaMalloc((void **)&d_data,size);
 	cudaMalloc((void **)&d_h,64*sizeof(float));
+	t_end = rtclock();
+	t_cbuffer = t_end-t_start;
+	
+	t_start = rtclock();
 	cudaMemcpy(d_data,image->data,size,cudaMemcpyHostToDevice);
 	cudaMemcpy(d_h,h,64*sizeof(float),cudaMemcpyHostToDevice);
+	t_end = rtclock();
+	t_offload_enviar = t_end-t_start;
+	
 	dim3 dimGrid(DIM_GRID,DIM_GRID);
 	dim3 dimBlock(DIM_BLOCO,DIM_BLOCO);
+
+	t_start = rtclock();
 	count_hist<<<dimGrid,dimBlock>>>(d_data,d_h,n);
+	cudaDeviceSynchronize();
+	t_end = rtclock();
+	t_kernel = t_end-t_start;
+
+	t_start = rtclock();
 	cudaMemcpy(h,d_h,64*sizeof(float),cudaMemcpyDeviceToHost);
+	t_end = rtclock();
+	t_offload_receber = t_end-t_start;
+
 	cudaFree(d_data); cudaFree(d_h);
 	for(i = 0; i < 64; i++)
 		h[i] /= n;
+	double t_total = t_cbuffer+t_offload_enviar+t_kernel+t_offload_receber;
+	printf("%lf\t%lf\t%lf\t%lf\t%lf\n",t_cbuffer,t_offload_enviar,t_kernel,t_offload_receber,t_total);
 }
 
 int main(int argc, char *argv[]) {

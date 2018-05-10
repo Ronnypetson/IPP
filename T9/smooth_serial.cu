@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <math.h>
-#define MASK_WIDTH 5
+#define MASK_WIDTH 11
 #define COMMENT "Histogram_GPU"
 #define RGB_COMPONENT_COLOR 255
 #define DIM_BLOCO 32
@@ -115,49 +115,51 @@ __global__ void smoothing_gpu(PPMPixel *data, PPMPixel *data_copy, int dim_x, in
     int x, y, lx, ly;
     int total_red, total_blue, total_green;
     //
-    pos0_x = blockIdx.x*blockDim.x;
-    pos0_y = blockIdx.y*blockDim.y;
-    img_x = pos0_x+threadIdx.x;
-    img_y = pos0_y+threadIdx.y;
-    index = blockDim.x*blockDim.y*(gridDim.x*blockIdx.y+blockIdx.x)+blockDim.x*threadIdx.y+threadIdx.x;
+    pos0_x = blockIdx.x*(blockDim.x-2*(MASK_WIDTH/2));
+    pos0_y = blockIdx.y*(blockDim.y-2*(MASK_WIDTH/2));
+    img_x = pos0_x+(threadIdx.x-MASK_WIDTH/2);
+    img_y = pos0_y+(threadIdx.y-MASK_WIDTH/2);
     index_in_block = blockDim.x*threadIdx.y+threadIdx.x;
-    if(blockDim.x*blockIdx.x+threadIdx.x < dim_x
-     && blockDim.y*blockIdx.y+threadIdx.y < dim_y){
-        PPMPixel s_data;
-        __shared__ PPMPixel s_data_copy[DIM_BLOCO*DIM_BLOCO];
-        s_data_copy[index_in_block] = data_copy[img_y*dim_x+img_x];
-        __syncthreads();
-        total_red = total_blue = total_green = 0;
-        for (y = img_y - ((MASK_WIDTH-1)/2); y <= (img_y + ((MASK_WIDTH-1)/2)); y++) {
-            for (x = img_x - ((MASK_WIDTH-1)/2); x <= (img_x + ((MASK_WIDTH-1)/2)); x++) {
-                if (x >= 0 && y >= 0 && y < dim_y && x < dim_x) {
-                    if(x >= (blockIdx.x+1)*blockDim.x
-                    || y >= (blockIdx.y+1)*blockDim.y
-                    || x < blockIdx.x*blockDim.x
-                    || y < blockIdx.y*blockDim.y){
-                        // Pixel fora da memória compartilhada -> pegar da global (filtro entre blocos)
-                        total_red += data_copy[(y*dim_x)+x].red;
-                        total_blue += data_copy[(y*dim_x)+x].blue;
-                        total_green += data_copy[(y*dim_x)+x].green;
-                    } else { // Pegar na local
-                        lx = x - img_x + threadIdx.x;
-                        ly = y - img_y + threadIdx.y;
-                        total_red += s_data_copy[ly*blockDim.x+lx].red;
-                        total_blue += s_data_copy[ly*blockDim.x+lx].blue;
-                        total_green += s_data_copy[ly*blockDim.x+lx].green;
-                    }
-                }
-            }
-        }
-        s_data.red = total_red / (MASK_WIDTH*MASK_WIDTH);
-        s_data.blue = total_blue / (MASK_WIDTH*MASK_WIDTH);
-        s_data.green = total_green / (MASK_WIDTH*MASK_WIDTH);
-        data[img_y*dim_x+img_x] = s_data;
+    //if(img_x < dim_x && img_x >= 0 && img_y < dim_y && img_y >= 0){
+    PPMPixel s_data;
+    __shared__ PPMPixel s_data_copy[(DIM_BLOCO+2*(MASK_WIDTH/2))*(DIM_BLOCO+2*(MASK_WIDTH/2))];
+	if(img_x < dim_x && img_x >= 0 && img_y < dim_y && img_y >= 0){
+    	s_data_copy[index_in_block] = data_copy[img_y*dim_x+img_x];
+	} else {
+		s_data_copy[index_in_block].red = 0;
+		s_data_copy[index_in_block].blue = 0;
+		s_data_copy[index_in_block].green = 0;
+	}
+    __syncthreads();
+	if(img_x-pos0_x < DIM_BLOCO
+	&& img_x-pos0_x >= 0
+	&& img_y-pos0_y < DIM_BLOCO
+	&& img_y-pos0_y >= 0
+	&& img_x < dim_x
+	&& img_x >= 0
+	&& img_y < dim_y
+	&& img_y >= 0){
+		total_red = total_blue = total_green = 0;
+		for (y = img_y - ((MASK_WIDTH-1)/2); y <= (img_y + ((MASK_WIDTH-1)/2)); y++) {
+		    for (x = img_x - ((MASK_WIDTH-1)/2); x <= (img_x + ((MASK_WIDTH-1)/2)); x++) {
+		        //if (x >= 0 && y >= 0 && y < dim_y && x < dim_x) {
+		            lx = x - img_x + threadIdx.x;
+		            ly = y - img_y + threadIdx.y;
+		            total_red += s_data_copy[ly*blockDim.x+lx].red;
+		            total_blue += s_data_copy[ly*blockDim.x+lx].blue;
+		            total_green += s_data_copy[ly*blockDim.x+lx].green;
+		        //}
+		    }
+		}
+		s_data.red = total_red / (MASK_WIDTH*MASK_WIDTH);
+		s_data.blue = total_blue / (MASK_WIDTH*MASK_WIDTH);
+		s_data.green = total_green / (MASK_WIDTH*MASK_WIDTH);
+		data[img_y*dim_x+img_x] = s_data;
     }
 }
 /* End of CUDA kernel */
 
-void Smoothing_CPU_Serial(PPMImage *image, PPMImage *image_copy) {
+/* void Smoothing_CPU_Serial(PPMImage *image, PPMImage *image_copy) {
     int i, j, y, x;
     int total_red, total_blue, total_green;
 
@@ -178,7 +180,7 @@ void Smoothing_CPU_Serial(PPMImage *image, PPMImage *image_copy) {
             image->data[(i * image->x) + j].green = total_green / (MASK_WIDTH*MASK_WIDTH);
         }
     }
-}
+} */
 
 int main(int argc, char *argv[]) {
 
@@ -189,6 +191,8 @@ int main(int argc, char *argv[]) {
     double t_start, t_end;
     int i;
     char *filename = argv[1]; //Recebendo o arquivo!;
+    //int MASK_WIDTH;
+    //scanf("%d",&MASK_WIDTH);
 
     PPMImage *image = readPPM(filename);
     PPMImage *image_output = readPPM(filename);
@@ -196,8 +200,8 @@ int main(int argc, char *argv[]) {
     t_start = rtclock();
     /* CUDA stuff */
     unsigned int n = image->x*image->y;
-    unsigned int dim_grid_x = (image->x+DIM_BLOCO-1)/DIM_BLOCO;
-    unsigned int dim_grid_y = (image->y+DIM_BLOCO-1)/DIM_BLOCO;
+    unsigned int dim_grid_x = (image->x+DIM_BLOCO)/DIM_BLOCO;
+    unsigned int dim_grid_y = (image->y+DIM_BLOCO)/DIM_BLOCO;
     unsigned int data_size = 3*(sizeof(unsigned char))*n;
 
     PPMPixel *d_data, *d_data_copy;
@@ -207,7 +211,7 @@ int main(int argc, char *argv[]) {
     cudaMemcpy(d_data, image_output->data, data_size, cudaMemcpyHostToDevice);
     cudaMemcpy(d_data_copy, image->data, data_size, cudaMemcpyHostToDevice);
     //
-    dim3 dimBlock(DIM_BLOCO,DIM_BLOCO);
+    dim3 dimBlock(DIM_BLOCO+2*(MASK_WIDTH/2),DIM_BLOCO+2*(MASK_WIDTH/2));
     dim3 dimGrid(dim_grid_x,dim_grid_y);
     //
     smoothing_gpu<<<dimGrid,dimBlock>>>(d_data, d_data_copy, image->x, image->y);
