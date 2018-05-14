@@ -2,9 +2,7 @@ import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
 
-
 object Analisador {
-
   // Args = path/to/text0.txt path/to/text1.txt
   def main(args: Array[String]) {
 
@@ -56,6 +54,5 @@ object Analisador {
     println(countsBoth.deep.mkString("\n"))
     // End of sandbox 3
   }
-
 }
 
