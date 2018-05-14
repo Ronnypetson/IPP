@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/ronnypetson/Documents/Unicamp/IPP/IPP/T10/T10/analisador.scala:56:24: value deep is not a member of org.apache.spark.rdd.RDD[(String, (Int, Int))][0m
+[0m[[0m[31merror[0m] [0m[0m    println(countsBoth.deep.mkString("\n"))[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
