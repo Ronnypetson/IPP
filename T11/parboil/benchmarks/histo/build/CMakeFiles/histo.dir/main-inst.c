@@ -1,3 +1,6 @@
+#include <omp.h>
+#include <check-rt/check-rt.h>
+
 /***************************************************************************
  *
  *            (C) Copyright 2010 The Board of Trustees of the
@@ -96,14 +99,28 @@ int main(int argc, char *argv[]) {
   for (iter = 0; iter < numIterations; iter++) {
     memset(histo, 0, histo_height * histo_width * sizeof(unsigned char));
     unsigned int i;
-# pragma omp parallel for check
+# pragma omp parallel 
+    { // START OF PARALLEL REGION
+    int __threadID__ = omp_get_thread_num();
+    int __numThreads__ = omp_get_num_threads();
+    __enterParallelRegion(__threadID__, __numThreads__);
+    #pragma omp for 
     for (i = 0; i < img_width * img_height; ++i) {
+    
+      __start_iter_prof( (long)i);
+    
       const unsigned int value = img[i];
 # pragma omp critical
       if (histo[value] < UINT8_MAX) {
         ++histo[value];
       }
+    
+      __stop_iter_prof( (long)i);
+    
     }
+    __exitParallelRegion();
+    } // END OF PARALLEL REGION
+    
   }
 
   //  pb_SwitchToTimer(&timers, pb_TimerID_IO);

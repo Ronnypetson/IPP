@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/bfs/build",
+  "command": "/opt/aclang/install/bin/clang++    -I/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/bfs/../../common/include   -ffast-math -fopenmp   -o CMakeFiles/bfs.dir/main.cc.o -c /home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/bfs/main.cc",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/bfs/main.cc"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/bfs/build",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/bfs/../../common/include   -ffast-math -fopenmp   -o CMakeFiles/bfs.dir/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/common/src/parboil.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/common/src/parboil.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/common/src/parboil.c"
+}
+]

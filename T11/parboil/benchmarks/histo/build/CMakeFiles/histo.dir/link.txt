@@ -1,0 +1,1 @@
+/opt/aclang/install/bin/clang   -g -fopenmp   CMakeFiles/histo.dir/main.c.o CMakeFiles/histo.dir/util.c.o CMakeFiles/histo.dir/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/common/src/parboil.c.o  -o histo -lm -lgomp 

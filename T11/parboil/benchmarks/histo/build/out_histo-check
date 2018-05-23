@@ -1,0 +1,22 @@
+Base implementation of histogramming.
+Maintained by Nady Obeid <obeid1@ece.uiuc.edu>
+
+IO        : 0.007530
+ -Input     : 0.007530
+ -Output    : 0.000000
+Compute   : 18.129692
+Timer Wall Time: 18.137234
+
+
+==== Dependence Checker Report Start ====
+
+
+
+
+
+
+
+
+
+==== Dependence Checker Report End   ====
+

@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/histo/build",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/histo/../../common/include -I/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/histo   -g -fopenmp   -o CMakeFiles/histo.dir/main.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/histo/main.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/histo/main.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/histo/build",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/histo/../../common/include -I/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/histo   -g -fopenmp   -o CMakeFiles/histo.dir/util.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/histo/util.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/histo/util.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/histo/build",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/histo/../../common/include -I/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/benchmarks/histo   -g -fopenmp   -o CMakeFiles/histo.dir/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/common/src/parboil.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/common/src/parboil.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/common/src/parboil.c"
+}
+]

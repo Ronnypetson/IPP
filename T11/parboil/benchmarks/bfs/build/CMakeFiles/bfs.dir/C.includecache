@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../../common/include/parboil.h
+unistd.h
+-
+
+/home/msc2018-ceb/ra211848/Documents/IPP/T11/parboil/common/src/parboil.c
+parboil.h
+-
+stdlib.h
+-
+string.h
+-
+stdio.h
+-
+sys/time.h
+-
+
