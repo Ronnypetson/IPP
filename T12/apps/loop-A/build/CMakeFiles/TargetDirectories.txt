@@ -1,0 +1,4 @@
+/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build/CMakeFiles/tls.dir
+/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build/CMakeFiles/serial.dir
+/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build/CMakeFiles/doax.dir
+/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build/CMakeFiles/bdx.dir

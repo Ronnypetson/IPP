@@ -1,3 +1,6 @@
+#include <omp.h>
+#include <check-rt/check-rt.h>
+
 /* +++Date last modified: 05-Jul-1997 */
 
 /*
@@ -53,15 +56,27 @@ int main1(int argc, char *argv[], int print, double *run_time_acc) {
     int random = rand_r(&rSeed);
     n = 0;
     gettimeofday(&start_time, NULL);
-//#pragma omp parallel for private(seed) ordered(1) use(tls,256)// tls,256;doacross // check
+#pragma omp parallel private(seed)  num_threads(1)
+    { // START OF PARALLEL REGION
+    int __threadID__ = omp_get_thread_num();
+    int __numThreads__ = omp_get_num_threads();
+    __enterParallelRegion(__threadID__, __numThreads__);
+    #pragma omp for 
     for (j = 0; j < iterations; j++) {
+    
+      __start_iter_prof( (unsigned long)j);
+    
       int temp = 0;
       seed = 13 * j + random;
       temp += pBitCntFunc[i](seed);
-//#pragma omp ordered depend(sink:j-1) //source
       n += temp;
-//#pragma omp ordered depend(source)
+    
+      __stop_iter_prof( (unsigned long)j);
+    
     }
+    __exitParallelRegion();
+    } // END OF PARALLEL REGION
+    
     gettimeofday(&end_time, NULL);
     double t = (end_time.tv_sec - start_time.tv_sec) * 1.0e6 +
                (end_time.tv_usec - start_time.tv_usec);
