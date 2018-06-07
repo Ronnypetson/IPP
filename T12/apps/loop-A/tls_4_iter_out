@@ -1,0 +1,13 @@
+Bit counter algorithm benchmark
+
+Optimized 1 bit/loop counter          > Bits: 13480873
+Ratko's mystery algorithm             > Bits: 17277441
+Recursive bit count by nybbles        > Bits: 17622125
+Non-recursive bit count by nybbles    > Bits: 18084428
+Non-recursive bit count by bytes (BW) > Bits: 18045727
+Non-recursive bit count by bytes (AR) > Bits: 16688831
+Shift and count bits                  > Bits: 17274470
+iterations: 1125000
+FUNCS: 7
+Total execution time: 8.533311 (s)
+Loop mean execution time: 15.238055 (ms)
