@@ -53,12 +53,13 @@ int main1(int argc, char *argv[], int print, double *run_time_acc) {
     int random = rand_r(&rSeed);
     n = 0;
     gettimeofday(&start_time, NULL);
-#pragma omp parallel for private(seed) ordered(1) use(tls,3*iterations)// tls,256;doacross // check
+#pragma omp parallel for private(seed) ordered(1) use(tls,iterations)  // check
     for (j = 0; j < iterations; j++) {
       int temp = 0;
       seed = 13 * j + random;
       temp += pBitCntFunc[i](seed);
 #pragma omp ordered depend(sink:j-1) //source
+//#pragma omp atomic
       n += temp;
 #pragma omp ordered depend(source)
     }
