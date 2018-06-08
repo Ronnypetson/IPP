@@ -1,0 +1,3 @@
+/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build-check/CMakeFiles/check-clean.dir
+/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build-check/CMakeFiles/serial-check.dir
+/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build-check/CMakeFiles/serial.dir
