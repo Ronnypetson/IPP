@@ -103,11 +103,11 @@ int main(int argc, char *argv[]) {
 
   TIME(loop_time_start);
 #pragma omp parallel for firstprivate(srcfiles, xres, yres, rpp, angle,        \
-                                      destfiles) check
+                                      destfiles) private(i) num_threads(2) ordered(1) use(bdx,qtdFiles/2) //check
   for (i = 0; i < qtdFiles; i++) {
     RotateEngine *re = new RotateEngine;
     RayEngine *ra = new RayEngine;
-
+#pragma omp ordered depend(sink:i)
     if (exec) {
       if (!ra->init(srcfiles[i], xres, yres, rpp)) {
         cerr << "Raytracing Kernel Init failed!" << endl;
@@ -121,6 +121,7 @@ int main(int argc, char *argv[]) {
         continue;
       }
     }
+#pragma omp ordered depend(source)
     if (exec) {
       ra->printRaytracingState();
       re->printRotationState();
@@ -131,7 +132,10 @@ int main(int argc, char *argv[]) {
       ra->finish();
       re->finish();
     }
+//£pragma omp ordered depend(source)
   }
+//#pragma omp barrier
+
   TIME(loop_time_end);
 
   double t = timevaldiff(&loop_time_start, &loop_time_end);

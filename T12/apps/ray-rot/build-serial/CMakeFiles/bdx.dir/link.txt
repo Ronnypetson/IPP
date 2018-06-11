@@ -1,0 +1,1 @@
+/opt/aclang/install/bin/clang++    -Wall -O3 -fno-inline-functions   -Wall -O3 -fno-inline-functions -fopenmp -fopenmp-use-dependence-analysis CMakeFiles/bdx.dir/program.cpp.o CMakeFiles/bdx.dir/image.cpp.o CMakeFiles/bdx.dir/ray_engine.cpp.o CMakeFiles/bdx.dir/rotation_engine.cpp.o  -o bdx -lm 

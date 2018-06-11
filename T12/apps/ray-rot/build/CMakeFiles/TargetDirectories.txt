@@ -1,0 +1,4 @@
+/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/tls.dir
+/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/serial.dir
+/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/doax.dir
+/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/bdx.dir

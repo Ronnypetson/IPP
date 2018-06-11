@@ -22,6 +22,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+//#include <ompuseclause.h>
 
 /*
  *  Initializes the RayEngine object for kernel execution. Loads the object list
@@ -172,12 +173,15 @@ struct vec3 RayEngine::shade(struct sphere *obj, struct spoint *sp, int depth) {
   int i;
   struct vec3 col = {0, 0, 0};
 
+//#pragma omp parallel for num_threads(2) ordered(1) use(bdx,(lnum)/2)
   /* for all lights ... */
   for (i = 0; i < lnum; i++) {
     double ispec, idiff;
     struct vec3 ldir;
     struct ray shadow_ray;
+//#pragma omp ordered depend(sink:i)
     struct sphere *iter = obj_list->next;
+//#pragma omp ordered depend(source)
     int in_shadow = 0;
 
     ldir.x = lights[i].x - sp->pos.x;
@@ -206,12 +210,14 @@ struct vec3 RayEngine::shade(struct sphere *obj, struct spoint *sp, int depth) {
       ispec = obj->mat.spow > 0.0
                   ? pow(MAX(DOT(sp->vref, ldir), 0.0), obj->mat.spow)
                   : 0.0;
-
+//#pragma omp ordered depend(sink:i)
       col.x += idiff * obj->mat.col.x + ispec;
       col.y += idiff * obj->mat.col.y + ispec;
       col.z += idiff * obj->mat.col.z + ispec;
+//#pragma omp ordered depend(source)
     }
   }
+//#pragma omp barrier
 
   /* Also, if the object is reflective, spawn a reflection ray, and call trace()
    * to calculate the light arriving from the mirror direction.
