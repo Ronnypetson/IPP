@@ -28,28 +28,28 @@ The CXX compiler identification is Clang, found in "/home/msc2018-ceb/ra211848/D
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_f4c2f/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_f4c2f.dir/build.make CMakeFiles/cmTC_f4c2f.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_bb4df/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_bb4df.dir/build.make CMakeFiles/cmTC_bb4df.dir/build
 gmake[1]: Entering directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f4c2f.dir/testCCompiler.c.o
-/opt/aclang/install/bin/clang     -o CMakeFiles/cmTC_f4c2f.dir/testCCompiler.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_f4c2f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f4c2f.dir/link.txt --verbose=1
-/opt/aclang/install/bin/clang       CMakeFiles/cmTC_f4c2f.dir/testCCompiler.c.o  -o cmTC_f4c2f 
+Building C object CMakeFiles/cmTC_bb4df.dir/testCCompiler.c.o
+/opt/aclang/install/bin/clang     -o CMakeFiles/cmTC_bb4df.dir/testCCompiler.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_bb4df
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bb4df.dir/link.txt --verbose=1
+/opt/aclang/install/bin/clang       CMakeFiles/cmTC_bb4df.dir/testCCompiler.c.o  -o cmTC_bb4df 
 gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_0db12/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_0db12.dir/build.make CMakeFiles/cmTC_0db12.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_818d9/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_818d9.dir/build.make CMakeFiles/cmTC_818d9.dir/build
 gmake[1]: Entering directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0db12.dir/CMakeCCompilerABI.c.o
-/opt/aclang/install/bin/clang     -o CMakeFiles/cmTC_0db12.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_0db12
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0db12.dir/link.txt --verbose=1
-/opt/aclang/install/bin/clang      -v CMakeFiles/cmTC_0db12.dir/CMakeCCompilerABI.c.o  -o cmTC_0db12  
+Building C object CMakeFiles/cmTC_818d9.dir/CMakeCCompilerABI.c.o
+/opt/aclang/install/bin/clang     -o CMakeFiles/cmTC_818d9.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_818d9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_818d9.dir/link.txt --verbose=1
+/opt/aclang/install/bin/clang      -v CMakeFiles/cmTC_818d9.dir/CMakeCCompilerABI.c.o  -o cmTC_818d9  
 clang version 4.0.0 (http://gitlab.lsc.ic.unicamp.br/luis.mattos/DoAcrossClause-clang.git 43881b74392fa5eb5e3b1bd02658f2b8960e2cea) (http://gitlab.lsc.ic.unicamp.br/luis.mattos/DoAcrossClause.git 29f88411d7815bd4bf6d4d0c7b16aad193c7f480)
 Target: x86_64-unknown-linux-gnu
 Thread model: posix
@@ -60,7 +60,7 @@ Candidate multilib: .;@m64
 Candidate multilib: 32;@m32
 Selected multilib: .;@m64
 Found CUDA installation: /usr/local/cuda, version unknown
- "/usr/bin/ld" --hash-style=gnu --no-add-needed --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_0db12 /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../.. -L/opt/aclang/install/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_0db12.dir/CMakeCCompilerABI.c.o -L/opt/aclang/install/lib -L. -L/opt/llvm-omp/lib -L/usr/local/cuda-8.0/lib64 -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtend.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crtn.o
+ "/usr/bin/ld" --hash-style=gnu --no-add-needed --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_818d9 /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../.. -L/opt/aclang/install/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_818d9.dir/CMakeCCompilerABI.c.o -L/opt/aclang/install/lib -L. -L/opt/llvm-omp/lib -L/usr/local/cuda-8.0/lib64 -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtend.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crtn.o
 gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
 
 
@@ -68,14 +68,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_0db12/fast"]
-  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_0db12.dir/build.make CMakeFiles/cmTC_0db12.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_818d9/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_818d9.dir/build.make CMakeFiles/cmTC_818d9.dir/build]
   ignore line: [gmake[1]: Entering directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_0db12.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/opt/aclang/install/bin/clang     -o CMakeFiles/cmTC_0db12.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_0db12]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0db12.dir/link.txt --verbose=1]
-  ignore line: [/opt/aclang/install/bin/clang      -v CMakeFiles/cmTC_0db12.dir/CMakeCCompilerABI.c.o  -o cmTC_0db12  ]
+  ignore line: [Building C object CMakeFiles/cmTC_818d9.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/opt/aclang/install/bin/clang     -o CMakeFiles/cmTC_818d9.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_818d9]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_818d9.dir/link.txt --verbose=1]
+  ignore line: [/opt/aclang/install/bin/clang      -v CMakeFiles/cmTC_818d9.dir/CMakeCCompilerABI.c.o  -o cmTC_818d9  ]
   ignore line: [clang version 4.0.0 (http://gitlab.lsc.ic.unicamp.br/luis.mattos/DoAcrossClause-clang.git 43881b74392fa5eb5e3b1bd02658f2b8960e2cea) (http://gitlab.lsc.ic.unicamp.br/luis.mattos/DoAcrossClause.git 29f88411d7815bd4bf6d4d0c7b16aad193c7f480)]
   ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
@@ -89,7 +89,7 @@ Parsed C implicit link information from above output:
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
   ignore line: [Found CUDA installation: /usr/local/cuda, version unknown]
-  link line: [ "/usr/bin/ld" --hash-style=gnu --no-add-needed --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_0db12 /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../.. -L/opt/aclang/install/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_0db12.dir/CMakeCCompilerABI.c.o -L/opt/aclang/install/lib -L. -L/opt/llvm-omp/lib -L/usr/local/cuda-8.0/lib64 -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtend.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crtn.o]
+  link line: [ "/usr/bin/ld" --hash-style=gnu --no-add-needed --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_818d9 /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../.. -L/opt/aclang/install/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_818d9.dir/CMakeCCompilerABI.c.o -L/opt/aclang/install/lib -L. -L/opt/llvm-omp/lib -L/usr/local/cuda-8.0/lib64 -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtend.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crtn.o]
     arg [/usr/bin/ld] ==> ignore
     arg [--hash-style=gnu] ==> ignore
     arg [--no-add-needed] ==> ignore
@@ -99,7 +99,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_0db12] ==> ignore
+    arg [cmTC_818d9] ==> ignore
     arg [/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtbegin.o] ==> ignore
@@ -111,7 +111,7 @@ Parsed C implicit link information from above output:
     arg [-L/opt/aclang/install/bin/../lib] ==> dir [/opt/aclang/install/bin/../lib]
     arg [-L/lib] ==> dir [/lib]
     arg [-L/usr/lib] ==> dir [/usr/lib]
-    arg [CMakeFiles/cmTC_0db12.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_818d9.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-L/opt/aclang/install/lib] ==> dir [/opt/aclang/install/lib]
     arg [-L.] ==> ignore
     arg [-L/opt/llvm-omp/lib] ==> dir [/opt/llvm-omp/lib]
@@ -152,14 +152,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_600c8/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_600c8.dir/build.make CMakeFiles/cmTC_600c8.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_c3e67/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_c3e67.dir/build.make CMakeFiles/cmTC_c3e67.dir/build
 gmake[1]: Entering directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_600c8.dir/feature_tests.c.o
-/opt/aclang/install/bin/clang    -std=c11 -o CMakeFiles/cmTC_600c8.dir/feature_tests.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_600c8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_600c8.dir/link.txt --verbose=1
-/opt/aclang/install/bin/clang       CMakeFiles/cmTC_600c8.dir/feature_tests.c.o  -o cmTC_600c8 
+Building C object CMakeFiles/cmTC_c3e67.dir/feature_tests.c.o
+/opt/aclang/install/bin/clang    -std=c11 -o CMakeFiles/cmTC_c3e67.dir/feature_tests.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_c3e67
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3e67.dir/link.txt --verbose=1
+/opt/aclang/install/bin/clang       CMakeFiles/cmTC_c3e67.dir/feature_tests.c.o  -o cmTC_c3e67 
 gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
 
 
@@ -172,14 +172,14 @@ gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/r
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_1e39c/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_1e39c.dir/build.make CMakeFiles/cmTC_1e39c.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_6b5f4/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_6b5f4.dir/build.make CMakeFiles/cmTC_6b5f4.dir/build
 gmake[1]: Entering directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1e39c.dir/feature_tests.c.o
-/opt/aclang/install/bin/clang    -std=c99 -o CMakeFiles/cmTC_1e39c.dir/feature_tests.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_1e39c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e39c.dir/link.txt --verbose=1
-/opt/aclang/install/bin/clang       CMakeFiles/cmTC_1e39c.dir/feature_tests.c.o  -o cmTC_1e39c 
+Building C object CMakeFiles/cmTC_6b5f4.dir/feature_tests.c.o
+/opt/aclang/install/bin/clang    -std=c99 -o CMakeFiles/cmTC_6b5f4.dir/feature_tests.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_6b5f4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6b5f4.dir/link.txt --verbose=1
+/opt/aclang/install/bin/clang       CMakeFiles/cmTC_6b5f4.dir/feature_tests.c.o  -o cmTC_6b5f4 
 gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
 
 
@@ -192,14 +192,14 @@ gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/r
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_e3d43/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_e3d43.dir/build.make CMakeFiles/cmTC_e3d43.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_2059b/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_2059b.dir/build.make CMakeFiles/cmTC_2059b.dir/build
 gmake[1]: Entering directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e3d43.dir/feature_tests.c.o
-/opt/aclang/install/bin/clang    -std=c90 -o CMakeFiles/cmTC_e3d43.dir/feature_tests.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_e3d43
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e3d43.dir/link.txt --verbose=1
-/opt/aclang/install/bin/clang       CMakeFiles/cmTC_e3d43.dir/feature_tests.c.o  -o cmTC_e3d43 
+Building C object CMakeFiles/cmTC_2059b.dir/feature_tests.c.o
+/opt/aclang/install/bin/clang    -std=c90 -o CMakeFiles/cmTC_2059b.dir/feature_tests.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_2059b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2059b.dir/link.txt --verbose=1
+/opt/aclang/install/bin/clang       CMakeFiles/cmTC_2059b.dir/feature_tests.c.o  -o cmTC_2059b 
 gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
 
 
@@ -210,28 +210,28 @@ gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/r
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_f75e0/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_f75e0.dir/build.make CMakeFiles/cmTC_f75e0.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_a2d95/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_a2d95.dir/build.make CMakeFiles/cmTC_a2d95.dir/build
 gmake[1]: Entering directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_f75e0.dir/testCXXCompiler.cxx.o
-/opt/aclang/install/bin/clang++      -o CMakeFiles/cmTC_f75e0.dir/testCXXCompiler.cxx.o -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_f75e0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f75e0.dir/link.txt --verbose=1
-/opt/aclang/install/bin/clang++        CMakeFiles/cmTC_f75e0.dir/testCXXCompiler.cxx.o  -o cmTC_f75e0 
+Building CXX object CMakeFiles/cmTC_a2d95.dir/testCXXCompiler.cxx.o
+/opt/aclang/install/bin/clang++      -o CMakeFiles/cmTC_a2d95.dir/testCXXCompiler.cxx.o -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_a2d95
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a2d95.dir/link.txt --verbose=1
+/opt/aclang/install/bin/clang++        CMakeFiles/cmTC_a2d95.dir/testCXXCompiler.cxx.o  -o cmTC_a2d95 
 gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_687ff/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_687ff.dir/build.make CMakeFiles/cmTC_687ff.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_fdeea/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_fdeea.dir/build.make CMakeFiles/cmTC_fdeea.dir/build
 gmake[1]: Entering directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_687ff.dir/CMakeCXXCompilerABI.cpp.o
-/opt/aclang/install/bin/clang++      -o CMakeFiles/cmTC_687ff.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_687ff
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_687ff.dir/link.txt --verbose=1
-/opt/aclang/install/bin/clang++       -v CMakeFiles/cmTC_687ff.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_687ff  
+Building CXX object CMakeFiles/cmTC_fdeea.dir/CMakeCXXCompilerABI.cpp.o
+/opt/aclang/install/bin/clang++      -o CMakeFiles/cmTC_fdeea.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_fdeea
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fdeea.dir/link.txt --verbose=1
+/opt/aclang/install/bin/clang++       -v CMakeFiles/cmTC_fdeea.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_fdeea  
 clang version 4.0.0 (http://gitlab.lsc.ic.unicamp.br/luis.mattos/DoAcrossClause-clang.git 43881b74392fa5eb5e3b1bd02658f2b8960e2cea) (http://gitlab.lsc.ic.unicamp.br/luis.mattos/DoAcrossClause.git 29f88411d7815bd4bf6d4d0c7b16aad193c7f480)
 Target: x86_64-unknown-linux-gnu
 Thread model: posix
@@ -242,7 +242,7 @@ Candidate multilib: .;@m64
 Candidate multilib: 32;@m32
 Selected multilib: .;@m64
 Found CUDA installation: /usr/local/cuda, version unknown
- "/usr/bin/ld" --hash-style=gnu --no-add-needed --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_687ff /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../.. -L/opt/aclang/install/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_687ff.dir/CMakeCXXCompilerABI.cpp.o -L/opt/aclang/install/lib -L. -L/opt/llvm-omp/lib -L/usr/local/cuda-8.0/lib64 -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtend.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crtn.o
+ "/usr/bin/ld" --hash-style=gnu --no-add-needed --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_fdeea /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../.. -L/opt/aclang/install/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_fdeea.dir/CMakeCXXCompilerABI.cpp.o -L/opt/aclang/install/lib -L. -L/opt/llvm-omp/lib -L/usr/local/cuda-8.0/lib64 -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtend.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crtn.o
 gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
 
 
@@ -250,14 +250,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_687ff/fast"]
-  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_687ff.dir/build.make CMakeFiles/cmTC_687ff.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_fdeea/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_fdeea.dir/build.make CMakeFiles/cmTC_fdeea.dir/build]
   ignore line: [gmake[1]: Entering directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_687ff.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/opt/aclang/install/bin/clang++      -o CMakeFiles/cmTC_687ff.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_687ff]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_687ff.dir/link.txt --verbose=1]
-  ignore line: [/opt/aclang/install/bin/clang++       -v CMakeFiles/cmTC_687ff.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_687ff  ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_fdeea.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/opt/aclang/install/bin/clang++      -o CMakeFiles/cmTC_fdeea.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_fdeea]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fdeea.dir/link.txt --verbose=1]
+  ignore line: [/opt/aclang/install/bin/clang++       -v CMakeFiles/cmTC_fdeea.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_fdeea  ]
   ignore line: [clang version 4.0.0 (http://gitlab.lsc.ic.unicamp.br/luis.mattos/DoAcrossClause-clang.git 43881b74392fa5eb5e3b1bd02658f2b8960e2cea) (http://gitlab.lsc.ic.unicamp.br/luis.mattos/DoAcrossClause.git 29f88411d7815bd4bf6d4d0c7b16aad193c7f480)]
   ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
@@ -271,7 +271,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
   ignore line: [Found CUDA installation: /usr/local/cuda, version unknown]
-  link line: [ "/usr/bin/ld" --hash-style=gnu --no-add-needed --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_687ff /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../.. -L/opt/aclang/install/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_687ff.dir/CMakeCXXCompilerABI.cpp.o -L/opt/aclang/install/lib -L. -L/opt/llvm-omp/lib -L/usr/local/cuda-8.0/lib64 -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtend.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crtn.o]
+  link line: [ "/usr/bin/ld" --hash-style=gnu --no-add-needed --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_fdeea /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../.. -L/opt/aclang/install/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_fdeea.dir/CMakeCXXCompilerABI.cpp.o -L/opt/aclang/install/lib -L. -L/opt/llvm-omp/lib -L/usr/local/cuda-8.0/lib64 -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtend.o /usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crtn.o]
     arg [/usr/bin/ld] ==> ignore
     arg [--hash-style=gnu] ==> ignore
     arg [--no-add-needed] ==> ignore
@@ -281,7 +281,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_687ff] ==> ignore
+    arg [cmTC_fdeea] ==> ignore
     arg [/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-redhat-linux/5.3.1/../../../../lib64/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-redhat-linux/5.3.1/crtbegin.o] ==> ignore
@@ -293,7 +293,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/opt/aclang/install/bin/../lib] ==> dir [/opt/aclang/install/bin/../lib]
     arg [-L/lib] ==> dir [/lib]
     arg [-L/usr/lib] ==> dir [/usr/lib]
-    arg [CMakeFiles/cmTC_687ff.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_fdeea.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-L/opt/aclang/install/lib] ==> dir [/opt/aclang/install/lib]
     arg [-L.] ==> ignore
     arg [-L/opt/llvm-omp/lib] ==> dir [/opt/llvm-omp/lib]
@@ -332,14 +332,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_538bf/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_538bf.dir/build.make CMakeFiles/cmTC_538bf.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_3980b/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_3980b.dir/build.make CMakeFiles/cmTC_3980b.dir/build
 gmake[1]: Entering directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_538bf.dir/feature_tests.cxx.o
-/opt/aclang/install/bin/clang++     -std=c++14 -o CMakeFiles/cmTC_538bf.dir/feature_tests.cxx.o -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_538bf
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_538bf.dir/link.txt --verbose=1
-/opt/aclang/install/bin/clang++        CMakeFiles/cmTC_538bf.dir/feature_tests.cxx.o  -o cmTC_538bf 
+Building CXX object CMakeFiles/cmTC_3980b.dir/feature_tests.cxx.o
+/opt/aclang/install/bin/clang++     -std=c++14 -o CMakeFiles/cmTC_3980b.dir/feature_tests.cxx.o -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_3980b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3980b.dir/link.txt --verbose=1
+/opt/aclang/install/bin/clang++        CMakeFiles/cmTC_3980b.dir/feature_tests.cxx.o  -o cmTC_3980b 
 gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
 
 
@@ -405,14 +405,14 @@ gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/r
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_cee2e/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_cee2e.dir/build.make CMakeFiles/cmTC_cee2e.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_510bf/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_510bf.dir/build.make CMakeFiles/cmTC_510bf.dir/build
 gmake[1]: Entering directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_cee2e.dir/feature_tests.cxx.o
-/opt/aclang/install/bin/clang++     -std=c++11 -o CMakeFiles/cmTC_cee2e.dir/feature_tests.cxx.o -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_cee2e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cee2e.dir/link.txt --verbose=1
-/opt/aclang/install/bin/clang++        CMakeFiles/cmTC_cee2e.dir/feature_tests.cxx.o  -o cmTC_cee2e 
+Building CXX object CMakeFiles/cmTC_510bf.dir/feature_tests.cxx.o
+/opt/aclang/install/bin/clang++     -std=c++11 -o CMakeFiles/cmTC_510bf.dir/feature_tests.cxx.o -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_510bf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_510bf.dir/link.txt --verbose=1
+/opt/aclang/install/bin/clang++        CMakeFiles/cmTC_510bf.dir/feature_tests.cxx.o  -o cmTC_510bf 
 gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
 
 
@@ -478,14 +478,14 @@ gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/r
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_abb7b/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_abb7b.dir/build.make CMakeFiles/cmTC_abb7b.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_9faa1/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_9faa1.dir/build.make CMakeFiles/cmTC_9faa1.dir/build
 gmake[1]: Entering directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_abb7b.dir/feature_tests.cxx.o
-/opt/aclang/install/bin/clang++     -std=c++98 -o CMakeFiles/cmTC_abb7b.dir/feature_tests.cxx.o -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_abb7b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_abb7b.dir/link.txt --verbose=1
-/opt/aclang/install/bin/clang++        CMakeFiles/cmTC_abb7b.dir/feature_tests.cxx.o  -o cmTC_abb7b 
+Building CXX object CMakeFiles/cmTC_9faa1.dir/feature_tests.cxx.o
+/opt/aclang/install/bin/clang++     -std=c++98 -o CMakeFiles/cmTC_9faa1.dir/feature_tests.cxx.o -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_9faa1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9faa1.dir/link.txt --verbose=1
+/opt/aclang/install/bin/clang++        CMakeFiles/cmTC_9faa1.dir/feature_tests.cxx.o  -o cmTC_9faa1 
 gmake[1]: Leaving directory '/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build/CMakeFiles/CMakeTmp'
 
 

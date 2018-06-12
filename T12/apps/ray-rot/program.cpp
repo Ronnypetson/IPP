@@ -103,7 +103,7 @@ int main(int argc, char *argv[]) {
 
   TIME(loop_time_start);
 #pragma omp parallel for firstprivate(srcfiles, xres, yres, rpp, angle,        \
-                                      destfiles) private(i) num_threads(2) ordered(1) use(bdx,qtdFiles/2) //check
+                                      destfiles) num_threads(2) ordered(1) use(bdx,qtdFiles/2) //check
   for (i = 0; i < qtdFiles; i++) {
     RotateEngine *re = new RotateEngine;
     RayEngine *ra = new RayEngine;
