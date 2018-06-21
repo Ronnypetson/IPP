@@ -1,0 +1,1 @@
+/opt/aclang/install/bin/clang++    -Wall -O3 -fno-inline-functions -fopenmp   CMakeFiles/serial.dir/program.cpp.o CMakeFiles/serial.dir/image.cpp.o CMakeFiles/serial.dir/ray_engine.cpp.o CMakeFiles/serial.dir/rotation_engine.cpp.o  -o serial -lm 

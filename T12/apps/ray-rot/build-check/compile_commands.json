@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build-check",
+  "command": "/opt/aclang/install/bin/clang++    -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot   -Wall -O3 -fno-inline-functions -fopenmp   -o CMakeFiles/serial.dir/program.cpp.o -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/program.cpp",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/program.cpp"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build-check",
+  "command": "/opt/aclang/install/bin/clang++    -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot   -Wall -O3 -fno-inline-functions -fopenmp   -o CMakeFiles/serial.dir/image.cpp.o -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/image.cpp",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/image.cpp"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build-check",
+  "command": "/opt/aclang/install/bin/clang++    -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot   -Wall -O3 -fno-inline-functions -fopenmp   -o CMakeFiles/serial.dir/ray_engine.cpp.o -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/ray_engine.cpp",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/ray_engine.cpp"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/build-check",
+  "command": "/opt/aclang/install/bin/clang++    -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot   -Wall -O3 -fno-inline-functions -fopenmp   -o CMakeFiles/serial.dir/rotation_engine.cpp.o -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/rotation_engine.cpp",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/ray-rot/rotation_engine.cpp"
+}
+]

@@ -1,0 +1,1 @@
+/opt/aclang/install/bin/clang++    -Wall -O3 -fno-inline-functions   -Wall -O3 -fno-inline-functions -fopenmp CMakeFiles/doax.dir/program.cpp.o CMakeFiles/doax.dir/image.cpp.o CMakeFiles/doax.dir/ray_engine.cpp.o CMakeFiles/doax.dir/rotation_engine.cpp.o  -o doax -lm 

@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+7856cffb1e96ee98928ff589c6e57ddf CMakeFiles/check-clean
+8038626ff30c1b7a3b3ba6a90d23f8a7 CMakeFiles/serial-check

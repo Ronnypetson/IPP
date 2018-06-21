@@ -1,0 +1,202 @@
+[
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_BDX__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -fopenmp-use-dependence-analysis -o CMakeFiles/bdx.dir/bitcnts.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnts.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnts.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_BDX__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -fopenmp-use-dependence-analysis -o CMakeFiles/bdx.dir/bitarray.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitarray.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitarray.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_BDX__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -fopenmp-use-dependence-analysis -o CMakeFiles/bdx.dir/bitcnt_1.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_1.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_1.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_BDX__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -fopenmp-use-dependence-analysis -o CMakeFiles/bdx.dir/bitcnt_2.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_2.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_2.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_BDX__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -fopenmp-use-dependence-analysis -o CMakeFiles/bdx.dir/bitcnt_3.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_3.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_3.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_BDX__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -fopenmp-use-dependence-analysis -o CMakeFiles/bdx.dir/bitcnt_4.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_4.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_4.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_BDX__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -fopenmp-use-dependence-analysis -o CMakeFiles/bdx.dir/bitfiles.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitfiles.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitfiles.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_BDX__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -fopenmp-use-dependence-analysis -o CMakeFiles/bdx.dir/bitstrng.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitstrng.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitstrng.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_BDX__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -fopenmp-use-dependence-analysis -o CMakeFiles/bdx.dir/bstr_i.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bstr_i.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bstr_i.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_BDX__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -fopenmp-use-dependence-analysis -o CMakeFiles/bdx.dir/loop-wrap.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/loop-wrap.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/loop-wrap.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -o CMakeFiles/doax.dir/bitcnts.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnts.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnts.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -o CMakeFiles/doax.dir/bitarray.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitarray.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitarray.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -o CMakeFiles/doax.dir/bitcnt_1.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_1.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_1.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -o CMakeFiles/doax.dir/bitcnt_2.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_2.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_2.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -o CMakeFiles/doax.dir/bitcnt_3.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_3.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_3.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -o CMakeFiles/doax.dir/bitcnt_4.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_4.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_4.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -o CMakeFiles/doax.dir/bitfiles.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitfiles.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitfiles.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -o CMakeFiles/doax.dir/bitstrng.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitstrng.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitstrng.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -o CMakeFiles/doax.dir/bstr_i.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bstr_i.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bstr_i.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -o CMakeFiles/doax.dir/loop-wrap.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/loop-wrap.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/loop-wrap.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -o CMakeFiles/serial.dir/bitcnts.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnts.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnts.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -o CMakeFiles/serial.dir/bitarray.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitarray.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitarray.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -o CMakeFiles/serial.dir/bitcnt_1.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_1.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_1.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -o CMakeFiles/serial.dir/bitcnt_2.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_2.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_2.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -o CMakeFiles/serial.dir/bitcnt_3.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_3.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_3.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -o CMakeFiles/serial.dir/bitcnt_4.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_4.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_4.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -o CMakeFiles/serial.dir/bitfiles.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitfiles.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitfiles.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -o CMakeFiles/serial.dir/bitstrng.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitstrng.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitstrng.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -o CMakeFiles/serial.dir/bstr_i.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bstr_i.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bstr_i.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang   -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -o CMakeFiles/serial.dir/loop-wrap.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/loop-wrap.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/loop-wrap.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_TLS__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -mrtm -o CMakeFiles/tls.dir/bitcnts.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnts.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnts.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_TLS__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -mrtm -o CMakeFiles/tls.dir/bitarray.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitarray.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitarray.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_TLS__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -mrtm -o CMakeFiles/tls.dir/bitcnt_1.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_1.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_1.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_TLS__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -mrtm -o CMakeFiles/tls.dir/bitcnt_2.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_2.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_2.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_TLS__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -mrtm -o CMakeFiles/tls.dir/bitcnt_3.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_3.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_3.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_TLS__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -mrtm -o CMakeFiles/tls.dir/bitcnt_4.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_4.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitcnt_4.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_TLS__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -mrtm -o CMakeFiles/tls.dir/bitfiles.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitfiles.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitfiles.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_TLS__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -mrtm -o CMakeFiles/tls.dir/bitstrng.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitstrng.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bitstrng.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_TLS__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -mrtm -o CMakeFiles/tls.dir/bstr_i.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bstr_i.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/bstr_i.c"
+},
+{
+  "directory": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/build-red",
+  "command": "/opt/aclang/install/bin/clang  -D__USE_TLS__ -I/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A   -Wall -O3 -fno-inline-functions   -fopenmp -mrtm -o CMakeFiles/tls.dir/loop-wrap.c.o   -c /home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/loop-wrap.c",
+  "file": "/home/msc2018-ceb/ra211848/Documents/IPP/T12/apps/loop-A/loop-wrap.c"
+}
+]
