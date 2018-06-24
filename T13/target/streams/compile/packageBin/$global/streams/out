@@ -1,1 +1,15 @@
-[0m[[0m[0mdebug[0m] [0m[0mJar uptodate: /home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/target/scala-2.11/mat_mul_2.11-0.1.jar[0m
+[0m[[0m[0minfo[0m] [0m[0mPackaging /home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/target/scala-2.11/mat_mul_2.11-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Mat_mul$$anonfun$main$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/target/scala-2.11/classes/Mat_mul$$anonfun$main$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Mat_mul.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/target/scala-2.11/classes/Mat_mul.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Mat_mul$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/target/scala-2.11/classes/Mat_mul$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Mat_mul$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/target/scala-2.11/classes/Mat_mul$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Mat_mul$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/target/scala-2.11/classes/Mat_mul$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Mat_mul$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/target/scala-2.11/classes/Mat_mul$.class[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m
