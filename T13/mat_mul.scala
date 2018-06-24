@@ -18,11 +18,11 @@ object Mat_mul {
     //).map{case (i, xs) => IndexedRow(i, Vectors.dense(xs))}
 
     val r = scala.util.Random
-    val rows_ = for (i <- 0 to 29) yield (for (j <- 0 to 2) yield r.nextDouble).toArray
+    val rows_ = for (i <- 0 to 499) yield (for (j <- 0 to 99) yield r.nextDouble).toArray
     val rows = sc.parallelize(rows_.toSeq).map{case rw => IndexedRow(0,Vectors.dense(rw))}
 
     val indexedRowMatrix = new IndexedRowMatrix(rows)
-    val localMatrix = Matrices.dense(3, 2, Array(1.0, 2.0, 3.0, 4.0, 5.0, 6.0))
+    val localMatrix = Matrices.dense(100, 50, (for (i <- 0 to 100*50-1) yield r.nextDouble).toArray)
     indexedRowMatrix.multiply(localMatrix).rows.collect.foreach(println)
   }
 }
