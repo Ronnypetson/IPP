@@ -1,7 +1,30 @@
-[0m[[0m[31merror[0m] [0m[0m/home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/mat_mul.scala:15:20: identifier expected but integer literal found.[0m
-[0m[[0m[31merror[0m] [0m[0m    val dim = args[0].toInt[0m
-[0m[[0m[31merror[0m] [0m[0m                   ^[0m
-[0m[[0m[31merror[0m] [0m[0m/home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/mat_mul.scala:16:1: ']' expected but ';' found.[0m
-[0m[[0m[31merror[0m] [0m[0m    val rows_ = for (i <- 0 to dim-1) yield (for (j <- 0 to dim-1) yield r.nextDouble).toArray[0m
-[0m[[0m[31merror[0m] [0m[0m^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/mat_mul.scala:14:30: scala.util.Random.type does not take parameters[0m
+[0m[[0m[31merror[0m] [0m[0m    val r = scala.util.Random(1) // seed=1 para comparar os resultados[0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/mat_mul.scala:18:84: overloaded method value dense with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (values: Array[Double])org.apache.spark.mllib.linalg.Vector <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (firstValue: Double,otherValues: Double*)org.apache.spark.mllib.linalg.Vector[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (Array[Nothing])[0m
+[0m[[0m[31merror[0m] [0m[0m    val rows = sc.parallelize(rows_.toSeq).map{case (i,rw) => IndexedRow(i,Vectors.dense(rw))} // 0 -> i[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/mat_mul.scala:25:86: overloaded method value dense with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (values: Array[Double])org.apache.spark.mllib.linalg.Vector <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (firstValue: Double,otherValues: Double*)org.apache.spark.mllib.linalg.Vector[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (Array[Nothing])[0m
+[0m[[0m[31merror[0m] [0m[0m    val rows2 = sc.parallelize(rows2_.toSeq).map{case (i,rw) => IndexedRow(i,Vectors.dense(rw))}[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/mat_mul.scala:27:49: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : org.apache.spark.rdd.RDD[Nothing][0m
+[0m[[0m[31merror[0m] [0m[0m required: org.apache.spark.rdd.RDD[org.apache.spark.mllib.linalg.distributed.IndexedRow][0m
+[0m[[0m[31merror[0m] [0m[0mNote: Nothing <: org.apache.spark.mllib.linalg.distributed.IndexedRow, but class RDD is invariant in type T.[0m
+[0m[[0m[31merror[0m] [0m[0mYou may wish to define T as +T instead. (SLS 4.5)[0m
+[0m[[0m[31merror[0m] [0m[0m    val indexedRowMatrix = new IndexedRowMatrix(rows).toBlockMatrix().cache() //[0m
+[0m[[0m[31merror[0m] [0m[0m                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/ronnypetson/Documents/Unicamp/IPP/IPP/T13/mat_mul.scala:30:44: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : org.apache.spark.rdd.RDD[Nothing][0m
+[0m[[0m[31merror[0m] [0m[0m required: org.apache.spark.rdd.RDD[org.apache.spark.mllib.linalg.distributed.IndexedRow][0m
+[0m[[0m[31merror[0m] [0m[0mNote: Nothing <: org.apache.spark.mllib.linalg.distributed.IndexedRow, but class RDD is invariant in type T.[0m
+[0m[[0m[31merror[0m] [0m[0mYou may wish to define T as +T instead. (SLS 4.5)[0m
+[0m[[0m[31merror[0m] [0m[0m    val localMatrix = new IndexedRowMatrix(rows2).toBlockMatrix().cache() // Matrices.dense(dim, dim, (for (i <- 0 to dim*dim-1) yield r.nextD$[0m
+[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m5 errors found[0m

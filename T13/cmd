@@ -1,3 +1,4 @@
 $SPARK_HOME/sbin/start-master.sh
 ssh ronnypetson@matmulspark-ssh.azurehdinsight.net
+--conf spark.rpc.message.maxSize=512
 spark-submit --class Mat_mul --driver-memory 1g --master spark://ronnypetson-pc:7077 target/scala-2.11/mat_mul_2.11-0.1.jar 1000
