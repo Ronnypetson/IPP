@@ -1,0 +1,31 @@
+import org.apache.spark.mllib.linalg.{Vectors, Matrices}
+import org.apache.spark.mllib.linalg.distributed.{IndexedRowMatrix, IndexedRow, BlockMatrix}
+import org.apache.spark.SparkContext
+import org.apache.spark.SparkContext._
+import org.apache.spark.SparkConf
+import collection.JavaConverters._
+
+object Mat_mul {
+  def main(args: Array[String]) {
+    // create Spark context with Spark configuration
+    val sc = new SparkContext(new SparkConf().setAppName("Multiplica    o de Matrizes"))
+
+    val r = scala.util.Random
+    val dim = args(0).toInt
+
+    val rows_ = for (i <- 0 to dim-1) yield (i,(for (j <- 0 to dim-1) yield r.nextDouble).toArray)
+    val rows = sc.parallelize(rows_.toSeq).map{case (i,rw) => IndexedRow(i,Vectors.dense(rw))}
+
+    val rows2_ = for (i <- 0 to dim-1) yield (i,(for (j <- 0 to dim-1) yield r.nextDouble).toArray)
+    val rows2 = sc.parallelize(rows2_.toSeq).map{case (i,rw) => IndexedRow(i,Vectors.dense(rw))}
+
+    val indexedRowMatrix = new IndexedRowMatrix(rows).toBlockMatrix().cache() //
+    indexedRowMatrix.validate() //
+
+    val localMatrix = new IndexedRowMatrix(rows2).toBlockMatrix().cache() // Matrices.dense(dim, dim, (for (i <- 0 to dim*dim-1) yield r.nextD$
+    localMatrix.validate()
+
+    //indexedRowMatrix.multiply(localMatrix).rows.collect.foreach(println)
+    indexedRowMatrix.multiply(localMatrix).blocks.collect.foreach(println)
+  }
+}
